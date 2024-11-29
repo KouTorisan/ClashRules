@@ -1,0 +1,532 @@
+---
+mixed-port: 7893
+allow-lan: true
+bind-address: "*"
+mode: rule
+log-level: debug
+ipv6: true
+external-controller: 0.0.0.0:9091
+clash-for-android:
+  append-system-dns: false
+profile:
+  tracing: true
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  listen: 0.0.0.0:7875
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  direct-nameserver:
+  - 192.168.0.6:53
+  nameserver:
+  - 192.168.0.4:5304
+proxy-groups:
+- name: 节点选择
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 机场选择
+  - 香港节点
+  - 日本节点
+  - 美国节点
+- name: 机场选择
+  type: select
+  disable-udp: false
+  proxies:
+  - ipv6boy
+  - 垃圾场
+  - 垃圾场Pro
+  - 渔渔的超级机场
+  - 云兔
+  - XFLTD
+  - HEISI
+- name: ipv6boy
+  type: select
+  disable-udp: false
+  use:
+  - ipv6boy
+- name: 垃圾场
+  type: select
+  disable-udp: false
+  use:
+  - 垃圾场
+- name: 垃圾场Pro
+  type: select
+  disable-udp: false
+  use:
+  - 垃圾场Pro
+- name: 渔渔的超级机场
+  type: select
+  disable-udp: false
+  use:
+  - 渔渔的超级机场
+- name: 云兔
+  type: select
+  disable-udp: false
+  use:
+  - 云兔
+  
+- name: XFLTD
+  type: select
+  disable-udp: false
+  use:
+  - XFLTD 
+  
+- name: HEISI
+  type: select
+  disable-udp: false
+  use:
+  - HEISI
+  
+- name: 香港节点
+  type: select
+  disable-udp: false
+  use:
+  - 垃圾场
+  - ipv6boy
+  - 垃圾场Pro
+  - HEISI
+  filter: 香港
+- name: 日本节点
+  type: select
+  disable-udp: false
+  use:
+  - 垃圾场
+  - ipv6boy
+  - 垃圾场Pro
+  - HEISI
+  filter: 日本|japan|Japan
+- name: 美国节点
+  type: select
+  disable-udp: false
+  use:
+  - 垃圾场
+  - ipv6boy
+  - 垃圾场Pro
+  - HEISI
+  filter: 美国|USA|usa|美利坚合众国|United States|America|united states|america|圣何塞|美西|洛杉矶
+- name: 国内网站
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: 国外网站
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Youtube
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Twitter
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Discord
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Misskey
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - 日本节点
+- name: ChatGPT
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - 香港节点
+  - 日本节点
+  - 美国节点
+- name: 游戏平台
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: EA
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Fanbox
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Patreon
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: DMM
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - 日本节点
+- name: Kemono
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Nekohouse
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: E-hentai
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - 美国节点
+- name: Nhentai
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - 美国节点
+- name: Speedtest
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Melonbooks
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: MisakaF数据
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - REJECT
+  - 节点选择
+  - 香港节点
+  - 日本节点
+  - 美国节点
+- name: MisakaF媒体
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - REJECT
+  - 节点选择
+  - ipv6boy
+  - 垃圾场Pro
+- name: PiliPili数据
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - REJECT
+  - 节点选择
+  - 香港节点
+  - 日本节点
+  - 美国节点
+- name: PiliPili媒体
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - REJECT
+  - 节点选择
+  - ipv6boy
+  - 垃圾场Pro
+- name: 沉静式翻译
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Yuliverse
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: Steam
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: SteamCN
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: 晴天TV登录
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+  - ipv6boy
+- name: 其他
+  type: select
+  disable-udp: false
+  proxies:
+  - DIRECT
+  - 节点选择
+- name: 负载均衡
+  type: load-balance
+  strategy: consistent-hashing
+  disable-udp: false
+  use:
+  - ipv6boy
+  url: https://cp.cloudflare.com/generate_204
+  interval: '300'
+rules:
+- DOMAIN-KEYWORD,kemono,Kemono
+- DOMAIN-KEYWORD,nhentai,Nhentai
+- DOMAIN-SUFFIX,e-hentai.org,E-hentai
+- DOMAIN-SUFFIX,exhentai.org,E-hentai
+- DOMAIN-SUFFIX,hath.network,E-hentai
+- DOMAIN-KEYWORD,misskey,Misskey
+- DOMAIN-KEYWORD,nekohouse,Nekohouse
+- DOMAIN-KEYWORD,zox,国内网站
+- DOMAIN-KEYWORD,pimeyes,国外网站
+- DOMAIN-KEYWORD,fanbox,Fanbox
+- DOMAIN-KEYWORD,yuli,Yuliverse
+- DOMAIN-KEYWORD,melonbooks,Melonbooks
+- DOMAIN-KEYWORD,speedtest.net,Speedtest
+- DOMAIN-KEYWORD,tonmemeparty,国外网站
+- DOMAIN-KEYWORD,18comic,国外网站
+- DOMAIN-KEYWORD,generationnexxxt,国内网站
+- DOMAIN-KEYWORD,embywebsocket,国外网站
+- DOMAIN,pilipili.misakaf.org,PiliPili媒体
+- DOMAIN-KEYWORD,pilipili,PiliPili数据
+- DOMAIN,stream1.misakaf.org,MisakaF媒体
+- DOMAIN,stream2.misakaf.org,MisakaF媒体
+- DOMAIN,stream3.misakaf.org,MisakaF媒体
+- DOMAIN,stream4.misakaf.org,MisakaF媒体
+- DOMAIN,emby.misakaf.org,MisakaF数据
+- DOMAIN,emby2.misakaf.org,MisakaF数据
+- IP-CIDR,116.211.237.225/32,晴天TV登录
+- IP-CIDR,59.36.228.18/32,晴天TV登录
+- IP-CIDR,110.43.121.179/32,晴天TV登录
+- IP-CIDR,58.49.216.150/32,晴天TV登录
+- IP-CIDR,150.242.56.214/32,晴天TV登录
+- IP-CIDR,218.30.103.71/32,晴天TV登录
+- IP-CIDR,116.211.189.205/32,晴天TV登录
+- IP-CIDR,14.215.35.235/32,晴天TV登录
+- IP-CIDR,14.215.35.241/32,晴天TV登录
+- IP-CIDR,159.75.168.110/32,晴天TV登录
+- RULE-SET,ChinaIPs,国内网站
+- RULE-SET,ChinaDomain,国内网站
+- RULE-SET,ChinaIPsBGP,国内网站
+- RULE-SET,ChatGPT,ChatGPT
+- RULE-SET,Twitter,Twitter
+- RULE-SET,Patreon,Patreon
+- RULE-SET,Youtube,Youtube
+- RULE-SET,DMM,DMM
+- RULE-SET,Discord,Discord
+- RULE-SET,Steam,Steam
+- RULE-SET,SteamCN,SteamCN
+- RULE-SET,GFW,国外网站
+- MATCH,其他
+proxy-providers:
+  垃圾场:
+    type: http
+    path: "./proxy_provider/垃圾场.yaml"
+    url: https://sub2.198466.xyz/api/v1/client/subscribe?token=36c28a33840b1d37bcacc60e9de15945
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  ipv6boy:
+    type: http
+    path: "./proxy_provider/ipv6boy.yaml"
+    url: https://sub2.ipv6boy.xyz/api/v1/client/subscribe?token=c3e069ae4563cfc9854779949ec8e938
+    interval: 3600
+    health-check:
+      enable: true
+      url: 	http://www.gstatic.com/generate_204
+      interval: 300
+  垃圾场Pro:
+    type: http
+    path: "./proxy_provider/垃圾场Pro.yaml"
+    url: https://sub.198477.xyz/link/AZ9VNo9oYtR0WWPn?clash=1
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  NaiU_Net:
+    type: http
+    path: "./proxy_provider/NaiU_Net.yaml"
+    url: https://times1729117397.subtangniu.top:9606/v2b/naiu/api/v1/client/subscribe?token=f4e7dbccc05c60479599f3298760bff1
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  渔渔的超级机场:
+    type: http
+    path: "./proxy_provider/渔渔的超级机场.yaml"
+    url: http://yvyv2.top/api/v1/client/subscribe?token=b3b545f7a0913cdd6997ad7a053be500
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  云兔:
+    type: http
+    path: "./proxy_provider/云兔.yaml"
+    url: https://api.haiouweb.com/api/v1/client/subscribe?token=84e09f810eb2f1304c038cc649217613
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  XFLTD:
+    type: http
+    path: "./proxy_provider/XFLTD.yaml"
+    url: https://sub.xfltd.me/api/v1/client/subscribe?token=886348de852781d965663ccb9e995f83
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300   
+  HEISI:
+    type: http
+    path: "./proxy_provider/HEISI.yaml"
+    url: https://d14wjrdxb73iwp.cloudfront.net/api/v1/client/subscribe?token=5861687b3ae0b501a6574d6197e59ea2
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300          
+      
+redir-port: 8892
+tproxy-port: 8895
+port: 8890
+socks-port: 8891
+secret: '123456'
+external-ui: "/usr/share/openclash/ui"
+geodata-mode: true
+geodata-loader: memconservative
+tcp-concurrent: true
+unified-delay: true
+keep-alive-interval: 1800
+find-process-mode: 'off'
+sniffer:
+  enable: true
+  parse-pure-ip: true
+routing-mark: 6666
+rule-providers:
+  ChinaIPs:
+    type: http
+    behavior: classical
+    path: "./rule_provider/ChinaIPs.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaIPs/ChinaIPs_Classical_No_Resolve.yaml
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    path: "./rule_provider/ChinaDomain.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Providers/ChinaDomain.yaml
+    interval: 86400
+  ChinaIPsBGP:
+    type: http
+    behavior: classical
+    path: "./rule_provider/ChinaIPsBGP.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaIPsBGP/ChinaIPsBGP_Classical_No_Resolve.yaml
+    interval: 86400
+  ChatGPT:
+    type: http
+    behavior: classical
+    path: "./rule_provider/ChatGPT.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml
+    interval: 86400
+  Twitter:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Twitter.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter_No_Resolve.yaml
+    interval: 86400
+  Patreon:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Patreon.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Patreon/Patreon_No_Resolve.yaml
+    interval: 86400
+  Youtube:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Youtube.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube_No_Resolve.yaml
+    interval: 86400
+  DMM:
+    type: http
+    behavior: classical
+    path: "./rule_provider/DMM.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/DMM/DMM_No_Resolve.yaml
+    interval: 86400
+  Discord:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Discord.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord_No_Resolve.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Steam.yaml"
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam_No_Resolve.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    path: "./rule_provider/SteamCN.yaml"
+    format: yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN_No_Resolve.yaml
+    interval: 86400
+  GFW:
+    type: http
+    behavior: classical
+    path: "./rule_provider/GFW.yaml"
+    format: yaml
+    url: https://fastly.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Providers/ProxyGFWlist.yaml
+    interval: 86400
