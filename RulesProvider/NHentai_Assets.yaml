@@ -1,0 +1,4 @@
+
+payload:
+    - DOMAIN-SUFFIX,t[0-9]+.nhentai.net
+    - DOMAIN-SUFFIX,i[0-9]+.nhentai.net
