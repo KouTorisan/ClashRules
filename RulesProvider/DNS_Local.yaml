@@ -1,0 +1,4 @@
+
+payload:
+  - IP-CIDR,192.168.0.4/32,no-resolve
+  - IP-CIDR,192.168.0.6/32,no-resolve
