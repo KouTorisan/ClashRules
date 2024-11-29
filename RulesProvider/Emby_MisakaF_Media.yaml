@@ -1,8 +1,5 @@
-
 payload:
-    - DOMAIN-SUFFIX,emby.misakaf.org
-    - DOMAIN-SUFFIX,emby2.misakaf.org
-    - DOMAIN-SUFFIX,emby3.misakaf.org
-    - IP-CIDR,104.26.10.170/32,no-resolve
-    - IP-CIDR,104.26.11.170/32,no-resolve
-    - IP-CIDR,172.67.75.167/32,no-resolve
+    - DOMAIN-SUFFIX,stream1.misakaf.org
+    - DOMAIN-SUFFIX,stream2.misakaf.org
+    - DOMAIN-SUFFIX,stream3.misakaf.org
+    - DOMAIN-SUFFIX,stream4.misakaf.org
