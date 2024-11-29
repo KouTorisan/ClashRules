@@ -1,5 +1,6 @@
 
 payload:
   - DOMAIN-SUFFIX,fanbox.cc
-  - DOMAIN-SUFFIX,pximgx.net
+  - DOMAIN-SUFFIX,pximg.net
   - DOMAIN-KEYWORD,fanbox
+  - DOMAIN-KEYWORD,pximg
