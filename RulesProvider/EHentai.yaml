@@ -6,6 +6,8 @@ payload:
     - DOMAIN-SUFFIX,appcenter.ms
     - DOMAIN-SUFFIX,ehviewer.com
     - DOMAIN-SUFFIX,hath.network
+    - DOMAIN-KEYWORD,exhentai
+    - DOMAIN-KEYWORD,e-hentai
     - IP-CIDR,3.219.96.23/32,no-resolve
     - IP-CIDR,37.48.89.44/32,no-resolve
     - IP-CIDR,40.70.161.7/32,no-resolve
