@@ -1,4 +1,23 @@
 
 payload:
-    - DOMAIN-KEYWORD,t[0-9]+.nhentai.net
-    - DOMAIN-KEYWORD,i[0-9]+.nhentai.net
+    - DOMAIN-KEYWORD,t1.nhentai.net
+    - DOMAIN-KEYWORD,t2.nhentai.net
+    - DOMAIN-KEYWORD,t3.nhentai.net
+    - DOMAIN-KEYWORD,t4.nhentai.net
+    - DOMAIN-KEYWORD,t5.nhentai.net
+    - DOMAIN-KEYWORD,t6.nhentai.net
+    - DOMAIN-KEYWORD,t7.nhentai.net
+    - DOMAIN-KEYWORD,t8.nhentai.net
+    - DOMAIN-KEYWORD,t9.nhentai.net
+    - DOMAIN-KEYWORD,t10.nhentai.net
+
+    - DOMAIN-KEYWORD,i1.nhentai.net
+    - DOMAIN-KEYWORD,i2.nhentai.net
+    - DOMAIN-KEYWORD,i3.nhentai.net
+    - DOMAIN-KEYWORD,i4.nhentai.net
+    - DOMAIN-KEYWORD,i5.nhentai.net
+    - DOMAIN-KEYWORD,i6.nhentai.net
+    - DOMAIN-KEYWORD,i7.nhentai.net
+    - DOMAIN-KEYWORD,i8.nhentai.net
+    - DOMAIN-KEYWORD,i9.nhentai.net
+    - DOMAIN-KEYWORD,i10.nhentai.net
