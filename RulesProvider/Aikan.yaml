@@ -1,4 +1,4 @@
 
 payload:
     - DOMAIN-KEYWORD,aikan
-    - IP-CIDR,45.196.236.212/24
+    - IP-CIDR,45.196.236.212/24,no-resolve
